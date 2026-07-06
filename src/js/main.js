@@ -1,6 +1,11 @@
 import * as THREE from "three";
+import Lenis from "lenis";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+const wantsRichInteraction = !prefersReducedMotion && !isCoarsePointer;
+
+let lenis = null;
 
 /* ------------------------------------------------------------------ */
 /* Scroll progress bar                                                  */
@@ -79,7 +84,7 @@ function initNav() {
 /* Scroll reveal animations                                            */
 /* ------------------------------------------------------------------ */
 function initReveal() {
-  const items = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".reveal, .reveal-clip");
   if (!items.length) return;
 
   if (prefersReducedMotion) {
@@ -88,7 +93,7 @@ function initReveal() {
   }
 
   document.querySelectorAll("[data-stagger]").forEach((group) => {
-    group.querySelectorAll(".reveal").forEach((el, i) => {
+    group.querySelectorAll(".reveal, .reveal-clip").forEach((el, i) => {
       el.style.transitionDelay = (i % 6) * 70 + "ms";
     });
   });
@@ -112,7 +117,7 @@ function initReveal() {
 /* 3D tilt on cards                                                     */
 /* ------------------------------------------------------------------ */
 function initTilt() {
-  if (prefersReducedMotion || matchMedia("(pointer: coarse)").matches) return;
+  if (!wantsRichInteraction) return;
   const cards = document.querySelectorAll(".tilt-card");
   cards.forEach((card) => {
     let frame = null;
@@ -134,6 +139,227 @@ function initTilt() {
     card.addEventListener("mousemove", onMove);
     card.addEventListener("mouseleave", reset);
   });
+}
+
+/* ------------------------------------------------------------------ */
+/* Buttery smooth scroll (Lenis) + anchor interception                  */
+/* ------------------------------------------------------------------ */
+function initSmoothScroll() {
+  const anchors = document.querySelectorAll('a[href^="#"]');
+
+  if (!wantsRichInteraction) {
+    // Native scroll-behavior:smooth + scroll-mt already handles anchors.
+    return;
+  }
+
+  lenis = new Lenis({
+    duration: 1.15,
+    easing: (t) => 1 - Math.pow(1 - t, 4),
+    smoothWheel: true,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  anchors.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const id = link.getAttribute("href");
+      if (!id || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -84, duration: 1.3 });
+    });
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom cursor: dot + trailing ring, morphs over interactive targets  */
+/* ------------------------------------------------------------------ */
+function initCustomCursor() {
+  if (!wantsRichInteraction) return;
+
+  document.documentElement.classList.add("has-custom-cursor");
+
+  const dot = document.createElement("div");
+  dot.className = "cursor-dot";
+  const ring = document.createElement("div");
+  ring.className = "cursor-ring";
+  document.body.append(dot, ring);
+
+  let mx = -100, my = -100;
+  let rx = mx, ry = my;
+  let primed = false;
+
+  window.addEventListener("mousemove", (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    dot.style.transform = `translate(${mx}px, ${my}px)`;
+    if (!primed) {
+      primed = true;
+      dot.classList.add("is-active");
+      ring.classList.add("is-active");
+      rx = mx;
+      ry = my;
+    }
+  });
+
+  function raf() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  const HOVER_SELECTOR = "a, button, .tilt-card, input, textarea, [data-cursor-hover]";
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.closest(HOVER_SELECTOR)) {
+      ring.classList.add("is-hover");
+      dot.classList.add("is-hover");
+    }
+  });
+  document.addEventListener("mouseout", (e) => {
+    if (e.target.closest(HOVER_SELECTOR)) {
+      ring.classList.remove("is-hover");
+      dot.classList.remove("is-hover");
+    }
+  });
+  document.addEventListener("mousedown", () => ring.classList.add("is-click"));
+  document.addEventListener("mouseup", () => ring.classList.remove("is-click"));
+  document.addEventListener("mouseleave", () => {
+    dot.classList.remove("is-active");
+    ring.classList.remove("is-active");
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Magnetic CTA buttons                                                 */
+/* ------------------------------------------------------------------ */
+function initMagnetic() {
+  if (!wantsRichInteraction) return;
+  document.querySelectorAll("[data-magnetic]").forEach((el) => {
+    const strength = 0.4;
+    el.addEventListener("mouseenter", () => {
+      el.style.transition = "transform 0.15s ease-out";
+    });
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      el.style.transform = `translate(${(x * strength).toFixed(1)}px, ${(y * strength).toFixed(1)}px)`;
+    });
+    el.addEventListener("mouseleave", () => {
+      el.style.transition = "transform 0.55s cubic-bezier(.16,1,.3,1)";
+      el.style.transform = "translate(0, 0)";
+    });
+  });
+}
+
+/* ------------------------------------------------------------------ */
+/* Split-text word reveal (preserves inline markup, e.g. gradient spans)*/
+/* ------------------------------------------------------------------ */
+function wrapWordsInSpans(node, counter, gradientClass) {
+  const frag = document.createDocumentFragment();
+  node.childNodes.forEach((child) => {
+    if (child.nodeType === Node.TEXT_NODE) {
+      child.textContent.split(/(\s+)/).forEach((part) => {
+        if (part === "") return;
+        if (/^\s+$/.test(part)) {
+          frag.appendChild(document.createTextNode(part));
+          return;
+        }
+        const outer = document.createElement("span");
+        outer.className = "split-word";
+        const inner = document.createElement("span");
+        // background-clip:text only clips to an element's own direct text,
+        // so a gradient-text ancestor's class must be re-applied to each
+        // word span once its text is split into nested children.
+        inner.className = gradientClass ? `split-word-inner ${gradientClass}` : "split-word-inner";
+        inner.textContent = part;
+        inner.style.transitionDelay = (counter.i % 14) * 45 + "ms";
+        counter.i += 1;
+        outer.appendChild(inner);
+        frag.appendChild(outer);
+      });
+    } else if (child.nodeType === Node.ELEMENT_NODE) {
+      if (child.tagName === "BR") {
+        frag.appendChild(child.cloneNode());
+      } else {
+        const clone = child.cloneNode(false);
+        const childGradientClass = child.classList.contains("text-gradient-cyan") ? "text-gradient-cyan" : gradientClass;
+        clone.appendChild(wrapWordsInSpans(child, counter, childGradientClass));
+        frag.appendChild(clone);
+      }
+    }
+  });
+  return frag;
+}
+
+function initSplitText() {
+  const headings = document.querySelectorAll("[data-split]");
+  if (!headings.length) return;
+
+  if (prefersReducedMotion) {
+    headings.forEach((h) => h.classList.add("is-split-visible"));
+    return;
+  }
+
+  headings.forEach((heading) => {
+    const counter = { i: 0 };
+    const frag = wrapWordsInSpans(heading, counter);
+    heading.textContent = "";
+    heading.appendChild(frag);
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-split-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
+  );
+  headings.forEach((h) => observer.observe(h));
+}
+
+/* ------------------------------------------------------------------ */
+/* Parallax depth layers                                                */
+/* ------------------------------------------------------------------ */
+function initParallax() {
+  if (prefersReducedMotion) return;
+  const layers = document.querySelectorAll("[data-parallax]");
+  if (!layers.length) return;
+
+  let ticking = false;
+  function update() {
+    const vh = window.innerHeight;
+    layers.forEach((el) => {
+      const speed = parseFloat(el.dataset.parallax) || 0.15;
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < -200 || rect.top > vh + 200) return;
+      const centerDelta = rect.top + rect.height / 2 - vh / 2;
+      el.style.transform = `translate3d(0, ${(-centerDelta * speed).toFixed(1)}px, 0)`;
+    });
+    ticking = false;
+  }
+  document.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+  update();
 }
 
 /* ------------------------------------------------------------------ */
@@ -170,7 +396,10 @@ function initBackToTop() {
   };
   document.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
-  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" }));
+  btn.addEventListener("click", () => {
+    if (lenis) lenis.scrollTo(0, { duration: 1.3 });
+    else window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+  });
 }
 
 /* ------------------------------------------------------------------ */
@@ -402,10 +631,15 @@ function initHeroScene() {
 
 /* ------------------------------------------------------------------ */
 document.addEventListener("DOMContentLoaded", () => {
+  initSmoothScroll();
   initProgressBar();
   initNav();
+  initSplitText();
   initReveal();
   initTilt();
+  initCustomCursor();
+  initMagnetic();
+  initParallax();
   initStarfields();
   initBackToTop();
   initContactForm();
