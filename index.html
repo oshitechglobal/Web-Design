@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TACS Cooling CC | Industrial Cooling &amp; NH3 Refrigeration Specialists</title>
+<meta name="description" content="TACS Cooling CC is a Namibian cooling and refrigeration company focused on reliable industrial cooling systems, ammonia (NH3) refrigeration, cold room support, maintenance, and technical service delivery. Based in Walvis Bay, Namibia." />
+<meta name="theme-color" content="#060d20" />
+<meta property="og:title" content="TACS Cooling CC | Industrial Cooling & NH3 Refrigeration Specialists" />
+<meta property="og:description" content="Reliable. Efficient. Built for Namibia. Specialist in the design, installation and maintenance of industrial ammonia (NH3) refrigeration and cooling systems." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060d20'/%3E%3Ccircle cx='32' cy='30' r='9' fill='%232dd4ee'/%3E%3Ccircle cx='48' cy='18' r='4.5' fill='%237dd3fc'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%237dd3fc'/%3E%3Ccircle cx='34' cy='48' r='4.5' fill='%237dd3fc'/%3E%3Cpath stroke='%237dd3fc' stroke-width='2' d='M32 30 48 18M32 30 16 16M32 30 34 48'/%3E%3C/svg%3E" />
+<link rel="preload" href="/assets/fonts/space-grotesk-700.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body class="bg-ice-50 font-sans text-navy-900 antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[999] focus:bg-white focus:text-navy-900 focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+
+<div id="progress-bar" aria-hidden="true"></div>
+
+<!-- ================= SVG ICON SPRITE ================= -->
+<svg width="0" height="0" class="hidden" aria-hidden="true">
+<defs>
+<symbol id="icon-snowflake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M4.9 6.5l14.2 11M4.9 17.5l14.2-11M8 3l4 3 4-3M8 21l4-3 4 3M2.5 9l3 3-3 3M21.5 9l-3 3 3 3"/></symbol>
+<symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 8.4 8 11 4.6-2.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="icon-cog" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13.5a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.9 2.9l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.9-2.9l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H2.5a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.9-2.9l.1.1a1.7 1.7 0 0 0 1.9.3H8.8a1.7 1.7 0 0 0 1-1.6V2.5a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.9 2.9l-.1.1a1.7 1.7 0 0 0-.3 1.9v.1a1.7 1.7 0 0 0 1.6 1h.2a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.6 1Z"/></symbol>
+<symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 4 10 4 18v2h2c8 0 14-6 14-16Z"/><path d="M6 20c4-6 8-9 14-12"/></symbol>
+<symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+<symbol id="icon-atom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="9" ry="3.6"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)"/></symbol>
+<symbol id="icon-warehouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l9-6 9 6v11"/><path d="M7 21v-7h10v7M3 21h18"/></symbol>
+<symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 4.9L3 17.5 6.5 21l6.3-6.3a4 4 0 0 0 4.9-5.4l-2.6 2.6-2.8-.5-.5-2.8 2.9-2.3Z"/></symbol>
+<symbol id="icon-bell-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 1 0-12 0c0 6-2.5 7-2.5 7h17S18 14 18 8Z"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/><path d="M12 4V2.5"/></symbol>
+<symbol id="icon-clipboard-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1H9V4Z"/><path d="m9 13 2 2 4-4"/></symbol>
+<symbol id="icon-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 17a8.5 8.5 0 1 1 15 0"/><path d="M12 13 15 9"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="12" height="18" rx="1"/><path d="M16 9h4v12h-4M8 7h.01M12 7h.01M8 11h.01M12 11h.01M8 15h.01M12 15h.01"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
+<symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12.5 2.3 2.3L16 10"/></symbol>
+<symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s4-6 11-6 7 6 7 6-1 6-7 6-11-6-11-6Z"/><path d="m21 12 2-3v6l-2-3ZM7 10c-1 .6-1.6 1.4-1.6 2s.6 1.4 1.6 2"/><circle cx="15.5" cy="10.5" r=".8" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-utensils" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2v8a2 2 0 0 0 4 0V2M8 10v12M18 2c-2 0-3 2-3 5s1 4 3 4v11"/></symbol>
+<symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h11v10H2zM13 10h5l3 3v4h-8z"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17.5" cy="18.5" r="1.6"/></symbol>
+<symbol id="icon-ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18l-2 5H5l-2-5ZM6 15V5h5l3 4M6 8h8"/><path d="M2 19c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/></symbol>
+<symbol id="icon-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l6 4v-4l6 4V8l6-4v17H3Z"/><path d="M7 17h.01M11 17h.01M15 17h.01"/></symbol>
+<symbol id="icon-pickaxe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4c4 0 8.5 2 11 5.5M20 4c-4 0-8.5 2-11 5.5"/><path d="m9 10-6.5 8.5 2 2L13 14"/></symbol>
+<symbol id="icon-store" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9 4 4h16l1 5M4 9v11h16V9M4 9a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0 5 0"/><path d="M9.5 20v-5h5v5"/></symbol>
+</defs>
+</svg>
+
+<!-- ================= NAVBAR ================= -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 glass-nav border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="#home" class="flex items-center gap-3 shrink-0 group">
+        <span class="relative flex items-center justify-center w-11 h-11 rounded-2xl bg-gradient-to-br from-cyan-400 to-navy-600 shadow-[0_8px_24px_-8px_rgba(45,212,238,0.6)]">
+          <svg class="w-6 h-6 text-navy-950" aria-hidden="true"><use href="#icon-atom"/></svg>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-heading font-bold text-lg text-white tracking-tight">TACS Cooling <span class="text-cyan-300">CC</span></span>
+          <span class="block text-[0.65rem] uppercase tracking-[0.2em] text-white/50 font-semibold">NH3 &middot; Refrigeration</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-medium" aria-label="Primary">
+        <a href="#home" class="nav-link nav-link--active px-4 py-2 rounded-full text-white/80 hover:text-white transition">Home</a>
+        <a href="#about" class="nav-link px-4 py-2 rounded-full text-white/80 hover:text-white transition">About</a>
+        <a href="#services" class="nav-link px-4 py-2 rounded-full text-white/80 hover:text-white transition">Services</a>
+        <a href="#nh3-specialists" class="nav-link px-4 py-2 rounded-full text-white/80 hover:text-white transition">NH3 Specialists</a>
+        <a href="#industries" class="nav-link px-4 py-2 rounded-full text-white/80 hover:text-white transition">Industries</a>
+        <a href="#contact" class="nav-link px-4 py-2 rounded-full text-white/80 hover:text-white transition">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="btn btn-primary hidden sm:inline-flex !py-2.5 !px-5 text-sm">
+          Request Quote <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+        </a>
+        <button id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Toggle navigation menu" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl text-white/90 hover:bg-white/10 transition">
+          <svg id="toggle-icon-menu" class="w-6 h-6" aria-hidden="true"><use href="#icon-menu"/></svg>
+          <svg id="toggle-icon-close" class="w-6 h-6 hidden" aria-hidden="true"><use href="#icon-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-panel" class="lg:hidden max-h-0 overflow-hidden transition-[max-height] duration-300 ease-in-out border-t border-white/5 bg-navy-950">
+    <nav class="flex flex-col px-5 py-4 gap-1 text-white/85 text-sm font-medium" aria-label="Mobile">
+      <a href="#home" class="px-3 py-3 rounded-xl hover:bg-white/5">Home</a>
+      <a href="#about" class="px-3 py-3 rounded-xl hover:bg-white/5">About</a>
+      <a href="#services" class="px-3 py-3 rounded-xl hover:bg-white/5">Services</a>
+      <a href="#nh3-specialists" class="px-3 py-3 rounded-xl hover:bg-white/5">NH3 Specialists</a>
+      <a href="#industries" class="px-3 py-3 rounded-xl hover:bg-white/5">Industries</a>
+      <a href="#contact" class="px-3 py-3 rounded-xl hover:bg-white/5">Contact</a>
+      <a href="#contact" class="btn btn-primary mt-2 justify-center">Request Quote <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="relative min-h-[100svh] flex items-center bg-navy-950 overflow-hidden scroll-mt-20">
+    <div class="absolute inset-0">
+      <canvas id="hero-canvas" class="w-full h-full block"></canvas>
+      <div id="hero-fallback" class="hidden absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(45,212,238,0.25),transparent_60%)]"></div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/40 via-navy-950/60 to-navy-950 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:56px_56px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,black,transparent)] pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-28 pb-20 w-full">
+      <div class="max-w-3xl reveal">
+        <span class="pill-badge pill-badge--dark mb-7">
+          <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-atom"/></svg>
+          Industrial Cooling &amp; NH3 Refrigeration
+        </span>
+        <h1 class="font-heading font-bold text-white text-[2.6rem] leading-[1.05] sm:text-6xl md:text-[4.2rem] md:leading-[1.03] tracking-tight">
+          Industrial Cooling &amp;<br class="hidden sm:block" /> <span class="text-gradient-cyan">NH3 Refrigeration</span> Specialists
+        </h1>
+        <p class="mt-7 flex items-center gap-3 text-lg sm:text-xl font-medium text-cyan-200/90">
+          <span class="w-8 h-px bg-cyan-400/70"></span> Reliable. Efficient. Built for Namibia.
+        </p>
+        <p class="mt-5 text-base sm:text-lg text-white/60 max-w-xl leading-relaxed">
+          Specialist in the design, installation, and maintenance of industrial ammonia (NH3) refrigeration and cooling systems. Engineering performance. Delivering reliability.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="btn btn-primary">Request a Quote <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+          <a href="#contact" class="btn btn-ghost-dark"><svg class="w-4 h-4" aria-hidden="true"><use href="#icon-phone"/></svg> Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#trust" class="scroll-cue absolute bottom-7 left-1/2 -translate-x-1/2 z-10 text-white/50 hover:text-white/90 transition" aria-label="Scroll down">
+      <svg class="w-7 h-7" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+    </a>
+  </section>
+
+  <!-- ================= TRUST BAR ================= -->
+  <section id="trust" aria-label="Why choose TACS Cooling" class="relative bg-navy-900 py-14 sm:py-16 overflow-hidden scroll-mt-20">
+    <div class="starfield" data-count="30"></div>
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4" data-stagger>
+        <div class="reveal flex items-start gap-3.5 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-shield-check"/></svg></span>
+          <div><h3 class="font-heading font-semibold text-white text-sm">NH3 Specialists</h3><p class="text-white/50 text-xs mt-1 leading-relaxed">Ammonia refrigeration experts you can trust.</p></div>
+        </div>
+        <div class="reveal flex items-start gap-3.5 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-cog"/></svg></span>
+          <div><h3 class="font-heading font-semibold text-white text-sm">Industrial Solutions</h3><p class="text-white/50 text-xs mt-1 leading-relaxed">Custom-engineered systems for every industry.</p></div>
+        </div>
+        <div class="reveal flex items-start gap-3.5 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-snowflake"/></svg></span>
+          <div><h3 class="font-heading font-semibold text-white text-sm">Maximum Reliability</h3><p class="text-white/50 text-xs mt-1 leading-relaxed">High-performance cooling that keeps you running.</p></div>
+        </div>
+        <div class="reveal flex items-start gap-3.5 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-leaf"/></svg></span>
+          <div><h3 class="font-heading font-semibold text-white text-sm">Energy Efficient</h3><p class="text-white/50 text-xs mt-1 leading-relaxed">Sustainable, efficient systems built for the future.</p></div>
+        </div>
+        <div class="reveal flex items-start gap-3.5 p-5 rounded-2xl bg-white shadow-[0_20px_40px_-16px_rgba(0,0,0,0.4)]">
+          <span class="icon-tile w-11 h-11 bg-navy-900/8 text-navy-800"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-pin"/></svg></span>
+          <div><h3 class="font-heading font-semibold text-navy-900 text-sm">Proudly Namibian</h3><p class="text-navy-600/70 text-xs mt-1 leading-relaxed">Supporting local industry with world-class cooling solutions.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="relative bg-ice-50 py-24 sm:py-32 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-16 items-start">
+      <div class="reveal">
+        <span class="pill-badge pill-badge--light mb-6"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span> About TACS Cooling</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-navy-950">
+          Specialist Cooling Services <span class="text-gradient-cyan">from Walvis Bay</span>
+        </h2>
+        <p class="mt-6 text-navy-600 text-base sm:text-lg leading-relaxed">
+          TACS Cooling CC is a Namibian cooling and refrigeration company focused on reliable industrial cooling systems, ammonia refrigeration, cold room support, maintenance, and technical service delivery. We support clients who need dependable cooling performance, safe operation, and responsive technical support.
+        </p>
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-center gap-3 text-navy-800 font-medium"><svg class="w-5 h-5 text-emerald-500 shrink-0" aria-hidden="true"><use href="#icon-check-circle"/></svg> Dependable industrial cooling performance</li>
+          <li class="flex items-center gap-3 text-navy-800 font-medium"><svg class="w-5 h-5 text-emerald-500 shrink-0" aria-hidden="true"><use href="#icon-check-circle"/></svg> Safe NH3 ammonia system handling</li>
+          <li class="flex items-center gap-3 text-navy-800 font-medium"><svg class="w-5 h-5 text-emerald-500 shrink-0" aria-hidden="true"><use href="#icon-check-circle"/></svg> Responsive technical support across Namibia</li>
+        </ul>
+      </div>
+
+      <div class="reveal lg:pt-8">
+        <div class="tilt-card glass-card rounded-3xl p-2 shadow-[0_30px_60px_-24px_rgba(11,26,61,0.25)]">
+          <div class="rounded-[1.35rem] border border-navy-900/5 divide-y divide-navy-900/8">
+            <div class="flex items-center gap-4 p-5">
+              <span class="icon-tile w-12 h-12 bg-navy-900 text-white"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-building"/></svg></span>
+              <div><p class="text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-navy-500">Company</p><p class="font-heading font-bold text-navy-950">TACS Cooling CC</p></div>
+            </div>
+            <div class="flex items-center gap-4 p-5">
+              <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-pin"/></svg></span>
+              <div><p class="text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-navy-500">Location</p><p class="font-heading font-bold text-navy-950">Walvis Bay, Namibia</p></div>
+            </div>
+            <div class="flex items-center gap-4 p-5">
+              <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-clipboard-check"/></svg></span>
+              <div><p class="text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-navy-500">Registration</p><p class="font-heading font-bold text-navy-950">CC/2022/06029</p></div>
+            </div>
+            <div class="flex items-center gap-4 p-5">
+              <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-shield-check"/></svg></span>
+              <div><p class="text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-navy-500">VAT</p><p class="font-heading font-bold text-navy-950">13226672-015</p></div>
+            </div>
+            <div class="flex items-center gap-4 p-5">
+              <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-mail"/></svg></span>
+              <div><p class="text-[0.68rem] font-semibold tracking-[0.14em] uppercase text-navy-500">Postal</p><p class="font-heading font-bold text-navy-950">PO Box 2592, Walvis Bay</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section id="services" class="relative bg-white py-24 sm:py-32 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <span class="pill-badge pill-badge--light mb-6"><svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-snowflake"/></svg> Our Services</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-navy-950">Refrigeration services <span class="text-gradient-cyan">built for industry</span></h2>
+        <p class="mt-5 text-navy-600 text-base sm:text-lg leading-relaxed">From plant-room support to cold storage installation — a complete technical offering for operations that depend on reliable cooling.</p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" data-stagger>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-atom"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">NH3 / Ammonia Refrigeration</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Specialist support for ammonia-based industrial refrigeration systems.</p>
+        </article>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-warehouse"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">Industrial Cooling Systems</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Cooling solutions for commercial, industrial, marine, logistics, food and storage applications.</p>
+        </article>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-building"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">Cold Rooms &amp; Cold Storage</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Installation, maintenance, repairs and optimisation of cold storage facilities.</p>
+        </article>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-wrench"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">Refrigeration Maintenance</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Preventative maintenance, inspections, servicing and system performance checks.</p>
+        </article>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-bell-alert"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">Breakdown Support</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Responsive technical support for refrigeration failures and urgent cooling problems.</p>
+        </article>
+        <article class="reveal tilt-card group p-8 rounded-3xl bg-gradient-to-b from-ice-100 to-ice-50 border border-navy-900/6 hover:border-cyan-400/40 hover:shadow-[0_24px_48px_-20px_rgba(6,182,212,0.35)]">
+          <span class="icon-tile w-14 h-14 bg-navy-950 text-cyan-300 mb-6 group-hover:scale-110 transition-transform duration-300"><svg class="w-7 h-7" aria-hidden="true"><use href="#icon-clipboard-check"/></svg></span>
+          <h3 class="font-heading font-bold text-xl text-navy-950">Compliance &amp; Safety Support</h3>
+          <p class="mt-3 text-navy-600 leading-relaxed">Support for safe operation, inspections and technical documentation around cooling systems.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NH3 SPECIALISTS ================= -->
+  <section id="nh3-specialists" class="relative bg-navy-950 py-24 sm:py-32 overflow-hidden scroll-mt-20">
+    <div class="starfield" data-count="34"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(45,212,238,0.12),transparent_45%)] pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <span class="pill-badge pill-badge--dark mb-6"><svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-snowflake"/></svg> NH3 Technical</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-white">NH3 Refrigeration <span class="text-gradient-cyan">Specialists</span></h2>
+        <p class="mt-6 text-white/60 text-base sm:text-lg leading-relaxed">
+          Ammonia refrigeration requires technical experience, safety awareness and correct system handling. TACS Cooling CC supports clients operating NH3 systems with maintenance, troubleshooting, inspection and operational support.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4" data-stagger>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-clipboard-check"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">System inspections</span>
+        </div>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-gauge"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">Leak &amp; performance checks</span>
+        </div>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-cog"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">Compressor &amp; plant-room support</span>
+        </div>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-wrench"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">Preventative maintenance</span>
+        </div>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-bell-alert"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">Emergency fault response</span>
+        </div>
+        <div class="reveal tilt-card flex items-center gap-4 p-5 rounded-2xl glass-card-dark">
+          <span class="icon-tile w-11 h-11 bg-cyan-400/15 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-shield-check"/></svg></span>
+          <span class="font-heading font-semibold text-white text-sm">Safe operating support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INDUSTRIES ================= -->
+  <section id="industries" class="relative bg-ice-50 py-24 sm:py-32 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8">
+      <div class="max-w-2xl mx-auto text-center reveal">
+        <span class="pill-badge pill-badge--light mb-6"><svg class="w-3.5 h-3.5" aria-hidden="true"><use href="#icon-snowflake"/></svg> Industries</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-navy-950">Cooling Solutions for <span class="text-gradient-cyan">Critical Operations</span></h2>
+        <p class="mt-5 text-navy-600 text-base sm:text-lg leading-relaxed">Trusted by operators where cooling failure is not an option — from harbour-side seafood to mining support facilities.</p>
+      </div>
+
+      <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-stagger>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-fish"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Fishing &amp; seafood</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-warehouse"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Cold storage facilities</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-utensils"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Food processing</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-truck"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Logistics &amp; warehousing</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-ship"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Marine &amp; harbour ops</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-factory"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Industrial plants</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-pickaxe"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Mining support</h3>
+        </div>
+        <div class="reveal tilt-card p-6 rounded-2xl bg-white border border-navy-900/6 shadow-sm hover:shadow-lg transition-shadow">
+          <span class="icon-tile w-11 h-11 bg-cyan-50 text-cyan-600 mb-4"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-store"/></svg></span>
+          <h3 class="font-heading font-semibold text-navy-950">Commercial refrigeration</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA BAND ================= -->
+  <section aria-label="Request cooling support" class="relative py-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 -mt-4 mb-4">
+      <div class="reveal cta-band rounded-[2rem] p-9 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-[0_30px_60px_-20px_rgba(6,13,32,0.5)]">
+        <div class="starfield" data-count="16"></div>
+        <div class="relative z-10">
+          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white">Need cooling support? Talk to the TACS team.</h2>
+          <p class="mt-3 text-white/60 max-w-xl">Maintenance schedules, NH3 plant-room support, cold storage installation, or urgent breakdown response — we're ready.</p>
+        </div>
+        <a href="#contact" class="btn btn-light relative z-10 shrink-0">Request Support <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="relative bg-white py-24 sm:py-32 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-16">
+      <div class="reveal">
+        <span class="pill-badge pill-badge--light mb-6"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span> Get in Touch</span>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-navy-950">Request <span class="text-gradient-cyan">Cooling Support</span></h2>
+        <p class="mt-6 text-navy-600 text-base sm:text-lg leading-relaxed">Tell us about your cooling requirement — installation, maintenance, NH3 support or an urgent breakdown. We'll respond promptly.</p>
+
+        <div class="mt-8 space-y-4" data-stagger>
+          <div class="reveal flex items-center gap-4 p-5 rounded-2xl bg-ice-50 border border-navy-900/6">
+            <span class="icon-tile w-12 h-12 bg-navy-950 text-cyan-300 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-building"/></svg></span>
+            <div><p class="font-heading font-bold text-navy-950">TACS Cooling CC</p><p class="text-navy-600 text-sm">Industrial Cooling &amp; NH3 Refrigeration</p></div>
+          </div>
+          <div class="reveal flex items-center gap-4 p-5 rounded-2xl bg-ice-50 border border-navy-900/6">
+            <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-pin"/></svg></span>
+            <div><p class="font-heading font-bold text-navy-950">Address</p><p class="text-navy-600 text-sm">PO Box 2592, Walvis Bay, Namibia</p></div>
+          </div>
+          <div class="reveal flex items-center gap-4 p-5 rounded-2xl bg-ice-50 border border-navy-900/6">
+            <span class="icon-tile w-12 h-12 bg-cyan-50 text-cyan-600 shrink-0"><svg class="w-5.5 h-5.5" aria-hidden="true"><use href="#icon-clipboard-check"/></svg></span>
+            <div><p class="font-heading font-bold text-navy-950">Registration</p><p class="text-navy-600 text-sm">CC/2022/06029 &middot; VAT 13226672-015</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <form id="contact-form" class="glass-card rounded-3xl p-6 sm:p-8 shadow-[0_30px_60px_-24px_rgba(11,26,61,0.2)] space-y-5" novalidate>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="f-name" class="field-label">Name <span class="text-cyan-600">*</span></label>
+              <input id="f-name" name="name" type="text" required class="field mt-2" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="f-company" class="field-label">Company</label>
+              <input id="f-company" name="company" type="text" class="field mt-2" placeholder="Company name" />
+            </div>
+            <div>
+              <label for="f-phone" class="field-label">Phone</label>
+              <input id="f-phone" name="phone" type="tel" class="field mt-2" placeholder="+264 ..." />
+            </div>
+            <div>
+              <label for="f-email" class="field-label">Email <span class="text-cyan-600">*</span></label>
+              <input id="f-email" name="email" type="email" required class="field mt-2" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label for="f-location" class="field-label">Location</label>
+              <input id="f-location" name="location" type="text" class="field mt-2" placeholder="Site / town" />
+            </div>
+            <div>
+              <label for="f-service" class="field-label">Service Required</label>
+              <input id="f-service" name="service" type="text" class="field mt-2" placeholder="e.g. NH3 maintenance, breakdown" />
+            </div>
+          </div>
+          <div>
+            <label for="f-message" class="field-label">Message</label>
+            <textarea id="f-message" name="message" rows="4" class="field mt-2 resize-none" placeholder="Describe your cooling requirement..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark w-full sm:w-auto">Send Request <svg class="w-4 h-4" aria-hidden="true"><use href="#icon-arrow-right"/></svg></button>
+          <p id="form-status" role="status" class="hidden text-sm text-emerald-600 font-medium"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="relative bg-navy-900 pt-16 pb-8">
+  <div class="wave-divider absolute -top-px inset-x-0 text-navy-900">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path fill="#0b1a3d" opacity="0.5" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,0 L0,0 Z"/><path fill="#0e2352" d="M0,48 C240,16 480,72 720,48 C960,24 1200,56 1440,32 L1440,80 L0,80 Z"/></svg>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid md:grid-cols-3 gap-12">
+      <div>
+        <div class="flex items-center gap-3">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-navy-600"><svg class="w-5 h-5 text-navy-950" aria-hidden="true"><use href="#icon-atom"/></svg></span>
+          <span class="font-heading font-bold text-white text-lg">TACS Cooling CC</span>
+        </div>
+        <p class="mt-4 text-white/50 text-sm leading-relaxed max-w-xs">TACS Cooling CC — Industrial Cooling &amp; NH3 Refrigeration Specialists. Namibia-based technical service for ammonia systems, cold storage and industrial cooling.</p>
+      </div>
+
+      <div>
+        <p class="text-cyan-300 text-xs font-semibold tracking-[0.16em] uppercase mb-4">Navigate</p>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-3 text-sm text-white/60">
+          <li><a href="#home" class="hover:text-white transition">Home</a></li>
+          <li><a href="#about" class="hover:text-white transition">About</a></li>
+          <li><a href="#services" class="hover:text-white transition">Services</a></li>
+          <li><a href="#nh3-specialists" class="hover:text-white transition">NH3 Specialists</a></li>
+          <li><a href="#industries" class="hover:text-white transition">Industries</a></li>
+          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-cyan-300 text-xs font-semibold tracking-[0.16em] uppercase mb-4">Contact</p>
+        <ul class="space-y-3 text-sm text-white/60">
+          <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-cyan-300 shrink-0" aria-hidden="true"><use href="#icon-pin"/></svg> PO Box 2592, Walvis Bay, Namibia</li>
+          <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-cyan-300 shrink-0" aria-hidden="true"><use href="#icon-clipboard-check"/></svg> CC/2022/06029</li>
+          <li class="flex items-start gap-2.5"><svg class="w-4 h-4 mt-0.5 text-cyan-300 shrink-0" aria-hidden="true"><use href="#icon-shield-check"/></svg> VAT 13226672-015</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+      <p>&copy; <span id="year">2026</span> TACS Cooling CC. All rights reserved.</p>
+      <p>CC/2022/06029 &middot; VAT 13226672-015</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" type="button" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-2xl bg-navy-950 text-cyan-300 shadow-[0_16px_32px_-12px_rgba(0,0,0,0.5)] flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none hover:bg-navy-800">
+  <svg class="w-5 h-5 -rotate-90" aria-hidden="true"><use href="#icon-arrow-right"/></svg>
+</button>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
