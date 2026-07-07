@@ -543,6 +543,18 @@ function initHeroScene() {
   molecule.scale.setScalar(0.92);
   scene.add(molecule);
 
+  // ---- Orbit rings (electron-path motif, echoes the atom icon) -------
+  const ringGroup = new THREE.Group();
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x6fe0ff, transparent: true, opacity: 0.35, side: THREE.DoubleSide });
+  [4.6, 5.6].forEach((radius, i) => {
+    const ringGeo = new THREE.TorusGeometry(radius, 0.014, 8, 96);
+    const ring = new THREE.Mesh(ringGeo, ringMat.clone());
+    ring.rotation.x = Math.PI / 2.4 + i * 0.6;
+    ring.rotation.y = i * 1.1;
+    ringGroup.add(ring);
+  });
+  molecule.add(ringGroup);
+
   // ---- Drifting particle field (frost / ice motes) -----------------
   const particleCount = 340;
   const positions = new Float32Array(particleCount * 3);
@@ -608,6 +620,8 @@ function initHeroScene() {
     molecule.rotation.y = t * 0.22;
     molecule.rotation.x = Math.sin(t * 0.35) * 0.12;
     molecule.position.y = Math.sin(t * 0.6) * 0.35;
+    ringGroup.rotation.z = t * 0.35;
+    ringGroup.rotation.y = t * -0.18;
 
     targetRot.x += (pointer.y * 0.25 - targetRot.x) * 0.04;
     targetRot.y += (pointer.x * 0.35 - targetRot.y) * 0.04;

@@ -390,6 +390,7 @@
 
   /* Drifting volumetric steam/fog, teal-glow, additive against the dark hero */
   .steam-field { mix-blend-mode: screen; }
+  .steam-field--soft { opacity: 0.55; }
   .steam-puff {
     position: absolute;
     border-radius: 9999px;
