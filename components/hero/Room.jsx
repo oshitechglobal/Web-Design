@@ -12,7 +12,7 @@ function useFloorTexture() {
     canvas.height = size;
     const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "#171c26";
+    ctx.fillStyle = "#262c38";
     ctx.fillRect(0, 0, size, size);
 
     // subtle concrete mottling
@@ -27,7 +27,7 @@ function useFloorTexture() {
     }
 
     // grid lines
-    ctx.strokeStyle = "rgba(125, 211, 252, 0.08)";
+    ctx.strokeStyle = "rgba(182, 186, 197, 0.12)";
     ctx.lineWidth = 2;
     const step = size / 16;
     for (let i = 0; i <= 16; i++) {
@@ -58,7 +58,7 @@ function useFloorTexture() {
       ctx.translate(x, y);
       const diag = w + h;
       for (let i = -diag; i < diag; i += stripe * 2) {
-        ctx.fillStyle = (i / (stripe * 2)) % 2 === 0 ? "#f5c518" : "#0b0d12";
+        ctx.fillStyle = (i / (stripe * 2)) % 2 === 0 ? "#c9a84a" : "#1c2129";
         ctx.save();
         ctx.translate(i, 0);
         ctx.rotate(Math.PI / 4);
@@ -81,12 +81,12 @@ function Column({ position }) {
     <group position={position}>
       <mesh castShadow receiveShadow position={[0, 2.5, 0]}>
         <cylinderGeometry args={[0.22, 0.26, 5, 16]} />
-        <meshStandardMaterial color="#39475e" metalness={0.6} roughness={0.4} />
+        <meshStandardMaterial color="#5a6b85" metalness={0.6} roughness={0.4} />
       </mesh>
       {/* hazard band near the base */}
       <mesh position={[0, 0.5, 0]}>
         <cylinderGeometry args={[0.27, 0.27, 0.22, 16]} />
-        <meshStandardMaterial color="#f5c518" emissive="#3a2e03" emissiveIntensity={0.3} metalness={0.1} roughness={0.6} />
+        <meshStandardMaterial color="#c9a84a" emissive="#3a2e03" emissiveIntensity={0.3} metalness={0.1} roughness={0.6} />
       </mesh>
     </group>
   );
@@ -114,18 +114,18 @@ export default function Room() {
       {/* Back walls (partial enclosure so the camera can orbit freely later) */}
       <mesh position={[0, 3, -5]} receiveShadow>
         <planeGeometry args={[20, 6]} />
-        <meshStandardMaterial color="#10141d" roughness={1} />
+        <meshStandardMaterial color="#1e232d" roughness={1} />
       </mesh>
       <mesh position={[-7, 3, 0]} rotation={[0, Math.PI / 2, 0]} receiveShadow>
         <planeGeometry args={[10, 6]} />
-        <meshStandardMaterial color="#0d1119" roughness={1} />
+        <meshStandardMaterial color="#1a1f28" roughness={1} />
       </mesh>
 
       {/* Overhead trusses */}
       {[-3, 0, 3].map((z) => (
         <mesh key={z} position={[0, 5.1, z]} castShadow>
           <boxGeometry args={[11, 0.2, 0.2]} />
-          <meshStandardMaterial color="#2a3242" metalness={0.5} roughness={0.5} />
+          <meshStandardMaterial color="#4a5468" metalness={0.5} roughness={0.5} />
         </mesh>
       ))}
 

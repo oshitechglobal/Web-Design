@@ -145,8 +145,9 @@ export default function CinematicHero() {
           )}
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-transparent to-navy-950/45 pointer-events-none" />
-        <div className="absolute inset-0 [box-shadow:inset_0_0_140px_40px_rgba(0,0,0,0.4)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1e26]/35 via-transparent to-[#1a1e26]/50 pointer-events-none" />
+        <div className="absolute inset-0 [box-shadow:inset_0_0_140px_40px_rgba(10,12,16,0.4)] pointer-events-none" />
+        <div className="noise-overlay" />
 
         <div ref={headlineRef} className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full">
