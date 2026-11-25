@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import Scene from "./Scene";
+import PostFX from "./PostFX";
 import Icon from "../Icon";
 import Magnetic from "../Magnetic";
 import { remap } from "./utils";
@@ -139,6 +140,7 @@ export default function CinematicHero() {
               }}
             >
               <Scene progressRef={progressRef} />
+              <PostFX progressRef={progressRef} />
             </Canvas>
           ) : (
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(45,212,238,0.25),transparent_60%)]" />
