@@ -13,3 +13,12 @@ node_modules/
 .impeccable/
 .taste-skill/
 skills-lock.json
+
+# graphify's local extraction cache (AST/semantic cache keyed by content hash) -
+# a performance optimization regenerated automatically, not a build artifact.
+# The report, graph.json/html and manifest it produces ARE committed below.
+graphify-out/cache/
+# Machine-specific local state (absolute paths to this session's Python
+# interpreter and scan root) - regenerated on every run, not portable.
+graphify-out/.graphify_python
+graphify-out/.graphify_root
