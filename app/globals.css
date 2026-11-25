@@ -3,49 +3,49 @@
 /* ---------- Self-hosted fonts (no external font CDN) ---------- */
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/inter-400.woff2") format("woff2");
+  src: url("/fonts/inter-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/inter-500.woff2") format("woff2");
+  src: url("/fonts/inter-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/inter-600.woff2") format("woff2");
+  src: url("/fonts/inter-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/inter-700.woff2") format("woff2");
+  src: url("/fonts/inter-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url("../fonts/space-grotesk-500.woff2") format("woff2");
+  src: url("/fonts/space-grotesk-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url("../fonts/space-grotesk-600.woff2") format("woff2");
+  src: url("/fonts/space-grotesk-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url("../fonts/space-grotesk-700.woff2") format("woff2");
+  src: url("/fonts/space-grotesk-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -110,7 +110,6 @@
 }
 
 @layer components {
-  /* Section badge pill, e.g. "OUR SERVICES" */
   .pill-badge {
     display: inline-flex;
     align-items: center;
@@ -190,7 +189,6 @@
     box-shadow: 0 14px 30px -10px rgba(0,0,0,0.25);
   }
 
-  /* Glass surfaces */
   .glass-nav {
     background: rgba(4, 9, 22, 0.72);
     backdrop-filter: blur(18px) saturate(140%);
@@ -208,30 +206,15 @@
     backdrop-filter: blur(12px);
   }
 
-  /* Reveal-on-scroll */
-  .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
-    will-change: opacity, transform;
-  }
-  .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Tilt cards (perspective handled inline via JS transform) */
   .tilt-card {
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     transform-style: preserve-3d;
     will-change: transform;
   }
 
-  /* Wave divider */
   .wave-divider { display: block; width: 100%; line-height: 0; }
   .wave-divider svg { width: 100%; height: auto; display: block; }
 
-  /* Starfield dots for dark sections */
   .starfield {
     position: absolute;
     inset: 0;
@@ -249,16 +232,6 @@
   @keyframes twinkle {
     0%, 100% { opacity: 0.25; transform: scale(1); }
     50% { opacity: 0.9; transform: scale(1.4); }
-  }
-
-  /* Molecule loader / small inline nh3 icon animation */
-  .orbit-dot {
-    animation: orbit 6s linear infinite;
-    transform-origin: center;
-  }
-  @keyframes orbit {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
   }
 
   .noise-overlay {
@@ -300,22 +273,6 @@
     color: var(--color-navy-600);
   }
 
-  /* Pop-in reveal for card grids (distinct motion from text reveal).
-     Deliberately avoids clip-path: a self-clipped target's intersection
-     rect is degenerate, so IntersectionObserver never reports it as
-     visible — the reveal would never trigger. */
-  .reveal-clip {
-    opacity: 0;
-    transform: scale(0.94) translateY(18px);
-    transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
-    will-change: opacity, transform;
-  }
-  .reveal-clip.is-visible {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-
-  /* Split-text word reveal */
   .split-word {
     display: inline-block;
     overflow: hidden;
@@ -324,14 +281,8 @@
   }
   .split-word-inner {
     display: inline-block;
-    transform: translateY(112%) rotate(4deg);
-    transition: transform 0.9s cubic-bezier(.16,1,.3,1);
-  }
-  [data-split].is-split-visible .split-word-inner {
-    transform: translateY(0) rotate(0deg);
   }
 
-  /* Custom cursor */
   .cursor-dot, .cursor-ring {
     position: fixed;
     top: 0;
@@ -344,128 +295,98 @@
   .cursor-dot {
     width: 8px;
     height: 8px;
-    margin: -4px 0 0 -4px;
     background: var(--color-cyan-400);
-    opacity: 0;
-    transition: opacity 0.25s ease, width 0.25s ease, height 0.25s ease, margin 0.25s ease;
+    mix-blend-mode: difference;
   }
   .cursor-ring {
-    width: 38px;
-    height: 38px;
-    margin: -19px 0 0 -19px;
-    border: 1.5px solid rgba(45, 212, 238, 0.7);
-    opacity: 0;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(45, 212, 238, 0.6);
     mix-blend-mode: difference;
-    transition: opacity 0.25s ease, width 0.35s cubic-bezier(.16,1,.3,1), height 0.35s cubic-bezier(.16,1,.3,1), margin 0.35s cubic-bezier(.16,1,.3,1), background-color 0.3s ease, border-color 0.3s ease;
-  }
-  .cursor-dot.is-active, .cursor-ring.is-active { opacity: 1; }
-  .cursor-ring.is-hover {
-    width: 64px;
-    height: 64px;
-    margin: -32px 0 0 -32px;
-    background: rgba(45, 212, 238, 0.16);
-    border-color: rgba(45, 212, 238, 0.95);
-  }
-  .cursor-dot.is-hover { width: 0; height: 0; }
-  .cursor-ring.is-click {
-    width: 28px;
-    height: 28px;
-    margin: -14px 0 0 -14px;
-  }
-  .has-custom-cursor, .has-custom-cursor a, .has-custom-cursor button {
-    cursor: none;
   }
 
-  /* Magnetic buttons: JS drives transform inline; this just primes the base transition */
-  [data-magnetic] {
-    transition: transform 0.5s cubic-bezier(.16,1,.3,1);
-  }
-
-  /* Parallax decorative orbs */
-  .parallax-orb {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(60px);
-    pointer-events: none;
-    will-change: transform;
-  }
-
-  /* Drifting volumetric steam/fog, teal-glow, additive against the dark hero */
-  .steam-field { mix-blend-mode: screen; }
-  .steam-field--soft { opacity: 0.55; }
-  .steam-puff {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(40px);
-    background: radial-gradient(circle, rgba(45,212,238,0.75), rgba(45,212,238,0.25) 55%, transparent 75%);
-    will-change: transform, opacity;
-  }
-  .steam-puff--1 {
-    width: 34rem; height: 34rem;
-    left: 46%; top: 8%;
-    animation: steam-drift-1 22s ease-in-out infinite;
-  }
-  .steam-puff--2 {
-    width: 24rem; height: 24rem;
-    left: 62%; top: 30%;
-    background: radial-gradient(circle, rgba(125,211,252,0.45), rgba(125,211,252,0.12) 55%, transparent 75%);
-    animation: steam-drift-2 18s ease-in-out infinite;
-    animation-delay: -4s;
-  }
-  .steam-puff--3 {
-    width: 20rem; height: 20rem;
-    left: 40%; top: 45%;
-    background: radial-gradient(circle, rgba(6,182,212,0.4), rgba(6,182,212,0.1) 55%, transparent 75%);
-    animation: steam-drift-3 26s ease-in-out infinite;
-    animation-delay: -9s;
-  }
-  .steam-puff--4 {
-    width: 16rem; height: 16rem;
-    left: 70%; top: 12%;
-    background: radial-gradient(circle, rgba(182,236,252,0.4), rgba(182,236,252,0.1) 55%, transparent 75%);
-    animation: steam-drift-2 16s ease-in-out infinite;
-    animation-delay: -12s;
-  }
-  @keyframes steam-drift-1 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-    50% { transform: translate(-4%, -6%) scale(1.12); opacity: 1; }
-  }
-  @keyframes steam-drift-2 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
-    50% { transform: translate(5%, -8%) scale(0.9); opacity: 0.9; }
-  }
-  @keyframes steam-drift-3 {
-    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
-    50% { transform: translate(-6%, 5%) scale(1.15); opacity: 0.85; }
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--color-cyan-400), var(--color-cyan-500));
+    z-index: 60;
+    transition: width 0.1s linear;
   }
 
   .icon-tile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: 0.9rem;
     flex-shrink: 0;
   }
 
-  .scroll-cue {
-    animation: scroll-cue 2.2s ease-in-out infinite;
-  }
-  @keyframes scroll-cue {
-    0%, 100% { transform: translateY(0); opacity: .6; }
-    50% { transform: translateY(10px); opacity: 1; }
+  .nav-link { position: relative; }
+  .nav-link--active { color: #fff; background: rgba(255,255,255,0.08); }
+
+  .scroll-cue { animation: bob 2.2s ease-in-out infinite; }
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
   }
 
-  #progress-bar {
-    position: fixed;
-    top: 0; left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-cyan-400), var(--color-cyan-500));
-    z-index: 100;
-    width: 0%;
+  /* Mobile nav panel: CSS-grid 0fr/1fr collapse - animates height without
+     a fixed max-height guess and without fighting Tailwind's utility layer. */
+  .mobile-panel-grid {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-in-out;
   }
+  .mobile-panel-grid.is-open {
+    grid-template-rows: 1fr;
+  }
+  .mobile-panel-grid > div { overflow: hidden; }
 }
 
-/* Unlayered on purpose: must win over the utilities layer's .max-h-0 */
-#mobile-panel.is-open {
-  max-height: 28rem;
+/* ---------- Volumetric steam field (hero + dark sections) ---------- */
+.steam-field {
+  mix-blend-mode: screen;
 }
+.steam-puff {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.22), rgba(125, 211, 252, 0) 70%);
+  filter: blur(12px);
+}
+.steam-puff--1 { left: 8%; top: 70%; animation: steam-drift-1 14s ease-in-out infinite; }
+.steam-puff--2 { left: 32%; top: 55%; width: 14rem; height: 14rem; animation: steam-drift-2 18s ease-in-out infinite; }
+.steam-puff--3 { left: 62%; top: 68%; animation: steam-drift-1 16s ease-in-out infinite reverse; }
+.steam-puff--4 { left: 82%; top: 50%; width: 12rem; height: 12rem; animation: steam-drift-3 20s ease-in-out infinite; }
+.steam-field--soft .steam-puff { opacity: 0.5; }
+@keyframes steam-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(2rem, -4rem) scale(1.15); opacity: 0.9; }
+}
+@keyframes steam-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(-3rem, -3rem) scale(1.2); opacity: 0.85; }
+}
+@keyframes steam-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+  50% { transform: translate(-1.5rem, -5rem) scale(1.1); opacity: 0.9; }
+}
+
+.parallax-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.cursor-none, .cursor-none * {
+  cursor: none !important;
+}
+
+/* Unlayered on purpose: must win over the utilities layer's max-height/opacity
+   utilities if any are ever applied alongside these ids. */
+.reveal-hidden { opacity: 0; }

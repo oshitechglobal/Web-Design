@@ -2,6 +2,10 @@ node_modules/
 .claude/settings.local.json
 .DS_Store
 
+# Next.js build output
+.next/
+out/
+
 # Design-assistant skill tooling (emilkowalski/skills, pbakaus/impeccable,
 # leonxlnx/taste-skill) installed for this session's own use: large asset
 # libraries, a compiled binary, and run-time scratch state, none of which

@@ -1,15 +1,13 @@
 {
   "name": "web-design",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "TACS Cooling CC - Industrial Cooling & NH3 Refrigeration Specialists",
+  "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./src/css/main.css -o ./assets/css/style.css --minify",
-    "build:js": "esbuild ./src/js/main.js --bundle --minify --format=iife --outfile=./assets/js/main.js",
-    "build": "npm run build:css && npm run build:js",
-    "watch:css": "tailwindcss -i ./src/css/main.css -o ./assets/css/style.css --watch",
-    "serve": "python3 -m http.server 8080",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -18,15 +16,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/space-grotesk": "^5.2.10",
-    "@tailwindcss/cli": "^4.3.2",
-    "esbuild": "^0.28.1",
-    "tailwindcss": "^4.3.2"
-  },
   "dependencies": {
-    "lenis": "^1.3.25",
-    "three": "^0.185.1"
+    "next": "^14.2.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.169.0",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/drei": "^9.114.3",
+    "gsap": "^3.12.7",
+    "lenis": "^1.1.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "tailwindcss": "^4.3.2"
   }
 }
