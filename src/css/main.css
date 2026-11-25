@@ -78,8 +78,10 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
+    overflow-x: clip;
   }
   body {
+    overflow-x: clip;
     background-color: var(--color-ice-50);
     color: var(--color-navy-900);
     -webkit-font-smoothing: antialiased;
