@@ -60,7 +60,7 @@ function StaticHeroFallback({ webglAvailable }) {
             gl={{ antialias: true, powerPreference: "high-performance" }}
             onCreated={({ gl }) => {
               gl.toneMapping = THREE.ACESFilmicToneMapping;
-              gl.toneMappingExposure = 1.1;
+              gl.toneMappingExposure = 1.6;
             }}
           >
             <StaticScene />
@@ -135,7 +135,7 @@ export default function CinematicHero() {
               shadows
               onCreated={({ gl }) => {
                 gl.toneMapping = THREE.ACESFilmicToneMapping;
-                gl.toneMappingExposure = 1.1;
+                gl.toneMappingExposure = 1.6;
               }}
             >
               <Scene progressRef={progressRef} />
@@ -145,8 +145,8 @@ export default function CinematicHero() {
           )}
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/55 via-transparent to-navy-950/70 pointer-events-none" />
-        <div className="absolute inset-0 [box-shadow:inset_0_0_160px_50px_rgba(0,0,0,0.8)] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-transparent to-navy-950/45 pointer-events-none" />
+        <div className="absolute inset-0 [box-shadow:inset_0_0_140px_40px_rgba(0,0,0,0.4)] pointer-events-none" />
 
         <div ref={headlineRef} className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-5 sm:px-8 w-full">

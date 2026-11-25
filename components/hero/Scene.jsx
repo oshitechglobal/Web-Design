@@ -9,14 +9,15 @@ import Annotations from "./Annotations";
 export default function Scene({ progressRef }) {
   return (
     <>
-      <fog attach="fog" args={["#03060f", 6, 20]} />
-      <color attach="background" args={["#03060f"]} />
+      <fog attach="fog" args={["#0a1428", 9, 24]} />
+      <color attach="background" args={["#0a1428"]} />
 
-      <ambientLight intensity={0.35} color="#1c3a86" />
+      <ambientLight intensity={0.85} color="#3a5a9e" />
+      <hemisphereLight args={["#9fd3f5", "#0b1a3d", 0.6]} />
       <directionalLight
         position={[4, 8, 4]}
-        intensity={1.4}
-        color="#dfeeff"
+        intensity={2.6}
+        color="#eef6ff"
         castShadow
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
@@ -27,8 +28,8 @@ export default function Scene({ progressRef }) {
         shadow-camera-top={8}
         shadow-camera-bottom={-8}
       />
-      <pointLight position={[-3, 2.5, -1]} intensity={8} color="#2dd4ee" distance={9} decay={2} />
-      <pointLight position={[4, 1.5, -3]} intensity={3} color="#e8972f" distance={6} decay={2} />
+      <pointLight position={[-3, 2.5, -1]} intensity={12} color="#2dd4ee" distance={10} decay={2} />
+      <pointLight position={[4, 1.5, -3]} intensity={5} color="#e8972f" distance={7} decay={2} />
 
       <Room />
       <Equipment progressRef={progressRef} />
